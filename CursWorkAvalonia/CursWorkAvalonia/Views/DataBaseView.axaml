@@ -1,0 +1,208 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="600"
+			 	Width="1000" Height="600"
+             x:Class="CursWorkAvalonia.Views.DataBaseView"
+			 Background="Gray">
+	<Grid RowDefinitions="20*,*,*">
+		<TabControl Grid.Column="0" Grid.Row="0" BorderThickness="3" Background="LightGray">
+			<TabItem Header="Bookmaker" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Bookmaker}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="OrganizationSName" Binding="{Binding OrganizationSName}"/>
+								<DataGridTextColumn Header="LeadTheRase" Binding="{Binding LeadTheRase}"/>
+								<DataGridTextColumn Header="RunId" Binding="{Binding RunId}"/>
+								<DataGridTemplateColumn Header="Delete">
+								
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteBookmaker}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateBookmaker}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			<TabItem    Header="Horse" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid  BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Horse}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="HorseId" Binding="{Binding HorseId}"/>
+								<DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="Rating" Binding="{Binding Rating}"/>
+								<DataGridTextColumn Header="Breed" Binding="{Binding Breed}"/>
+								<DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+								<DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+								<DataGridTextColumn Header="TrainerId" Binding="{Binding TrainerId}"/>
+								<DataGridTextColumn Header="JockeyId" Binding="{Binding JockeyId}"/>
+								<DataGridTextColumn Header="OwnerId" Binding="{Binding OwnerId}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteHorse}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateHorse}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			<TabItem   Header="Jockey" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Jockey}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="JockeyId" Binding="{Binding JockeyId}"/>
+								<DataGridTextColumn Header="FullName" Binding="{Binding FullName}"/>
+								<DataGridTextColumn Header="Weight" Binding="{Binding Weight}"/>
+								<DataGridTextColumn Header="Growth" Binding="{Binding Growth}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteJockey}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateJockey}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			<TabItem  Header="Location" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Location}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="LocationId" Binding="{Binding LocationId}"/>
+								<DataGridTextColumn Header="City" Binding="{Binding City}"/>
+								<DataGridTextColumn Header="Stadium" Binding="{Binding Stadium}"/>
+								<DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteLocation}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateLocation}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			<TabItem  Header="Owner" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Owner}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="OwnerId" Binding="{Binding OwnerId}"/>
+								<DataGridTextColumn Header="FullName" Binding="{Binding FullName}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteOwner}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateOwner}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			<TabItem  Header="Run" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Run}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="RunId" Binding="{Binding RunId}"/>
+								<DataGridTextColumn Header="TypeOfRace" Binding="{Binding TypeOfRace}"/>
+								<DataGridTextColumn Header="DistanceFur" Binding="{Binding DistanceFur}"/>
+								<DataGridTextColumn Header="ListOfHorseId" Binding="{Binding ListOfHorseId}"/>
+								<DataGridTextColumn Header="LocationId" Binding="{Binding LocationId}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteRun}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateRun}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+
+			<TabItem  Header="Trainer" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.5">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid BorderBrush="Black" Background="White" Items="{Binding $parent[Window].DataContext.Trainer}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="TrainerId" Binding="{Binding TrainerId}"/>
+								<DataGridTextColumn Header="FullName" Binding="{Binding FullName}"/>
+								<DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+								<DataGridTextColumn Header="Rating" Binding="{Binding Rating}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteTrainer}" Grid.Row="2" Name="Group" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Delete
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateTrainer}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						New Record
+					</Button>
+				</Grid>
+			</TabItem>
+			
+		</TabControl>
+		<TabControl  Grid.Column="1" Grid.Row="0" Items="{Binding $parent[Window].DataContext.Items}">
+			<TabControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Name}" />
+				</DataTemplate>
+			</TabControl.ItemTemplate>
+			<TabControl.ContentTemplate>
+				<DataTemplate>
+					<DockPanel LastChildFill="True">
+					</DockPanel>
+				</DataTemplate>
+			</TabControl.ContentTemplate>
+		</TabControl>
+		<Button Command="{Binding $parent[Window].DataContext.SQLRequestOpen}" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+			Create new request
+		</Button>
+	</Grid>
+</UserControl>
